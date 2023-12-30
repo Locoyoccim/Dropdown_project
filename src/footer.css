@@ -1,0 +1,11 @@
+.attribution {
+  font-size: 11px;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  margin: 0 5px;
+}

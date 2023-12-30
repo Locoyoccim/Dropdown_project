@@ -1,0 +1,243 @@
+
+:root {
+  --Almost_White: hsl(0, 0%, 98%);
+  --Medium_Gray: hsl(0, 0%, 41%);
+  --Almost_Black: hsl(0, 0%, 8%);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 99%;
+  height: 99%;
+  font-size: 18px;
+  font-family: "Epilogue", sans-serif;
+  background-color: var(--Almost_White);
+}
+.navbar1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding-top: 15px;
+  z-index: 3;
+}
+.logo {
+  width: 80px;
+  height: 20px;
+  margin-left: 20px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding: 20px;
+}
+nav,
+.options {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 40px;
+  gap: 35px;
+}
+a,
+li {
+  text-decoration: none;
+  color: var(--Medium_Gray);
+}
+button {
+  height: 40px;
+  width: 100px;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  height: 40px;
+  list-style: none;
+  cursor: pointer;
+}
+.register,
+.login {
+  background: none;
+  border: none;
+  color: var(--Medium_Gray);
+}
+.register {
+  border: var(--Medium_Gray) 1px solid;
+  border-radius: 15px;
+}
+i{
+  margin-left: 5px;
+  height: 20px;
+  fill: var(--Medium_Gray);
+  display: grid;
+  align-content: center;
+}
+.features,
+.company {
+  display: flex;
+}
+#features_container,
+#company_container {
+  list-style: none;
+  background-color: white;
+  position: absolute;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  margin: 0;
+  height: auto;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in, padding 1s ease;
+}
+#features_container.open,
+#company_container.open {
+  max-height: 150px;
+  padding: 20px;
+}
+#features_container {
+  transform: translate(-75px, 25px);
+}
+#company_container {
+  transform: translate(-25px, 25px);
+}
+#features_container img {
+  margin-right: 15px;
+}
+li,
+a,
+.register,
+.login,
+i {
+  transition: color 0.3s ease, transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+li:hover,
+a:hover,
+.register:hover,
+.login:hover,
+i:hover {
+  color: black;
+}
+i.rotate {
+  transform: rotate(180deg);
+}
+.hamburguer {
+  width: 50px;
+  height: 25px;
+  border: none;
+  background: none;
+  position: absolute;
+  display: none;
+}
+.x {
+  display: none;
+}
+.sombra {
+  position: absolute;
+  height: 99%;
+  width: 99%;
+  background-color: hsl(0, 0%, 8%, 0.3);
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.sombra.shadow {
+  opacity: 1;
+  z-index: 2;
+}
+.flex_ {
+  display: flex;
+}
+@media screen and (max-width: 770px) {
+  .navbar1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Almost_White);
+    position: fixed;
+    left: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 4;
+    align-content: flex-start;
+    transition: left 0.8s ease-in-out;
+    justify-content: initial;
+    width: 53%;
+    padding: 0 20px;
+  }
+  nav.apply {
+    left: 47%;
+  }
+  .hamburguer {
+    position: initial;
+    display: inline-block;
+    margin: 0;
+  }
+  .options {
+    margin-top: 25px;
+    height: max-content;
+    gap: 15px;
+    align-items: start;
+    width: 95%;
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    flex-direction: column;
+  }
+  .buttons {
+    height: auto;
+    width: 100%;
+    margin: 0 ;
+    padding: 0 10px;
+  }
+  .register,
+  .login {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .x {
+    display: flex;
+    background: 0;
+    border: 0;
+    margin: 40px 0;
+    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+    width: 93%;
+  }
+  #features_container,
+  #company_container {
+    position: static;
+    max-width: 100%;
+    border-radius: 0;
+    transform: translate(0, 0);
+    margin: 2px;
+    box-shadow: none;
+    background-color: var(--Almost_White);
+  }
+  .company,
+  .features {
+    display: grid;
+    width: 100%;
+    align-items: start;
+  }
+}
