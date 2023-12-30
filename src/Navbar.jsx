@@ -3,6 +3,10 @@ import logo from "/src/images/logo.svg";
 import hamburguer from "/src/images/icon-menu.svg";
 import close from "/src/images/icon-close-menu.svg";
 import "/src/navbar.css";
+import list from '/src/images/icon-todo.svg';
+import calendar from '/src/images/icon-calendar.svg';
+import reminders from '/src/images/icon-reminders.svg';
+import planing from '/src/images/icon-planning.svg';
 
 function Navbar() {
   function Open(name) {
@@ -57,19 +61,19 @@ function Navbar() {
               </div>
               <ul id="features_container">
                 <li>
-                  <img src="/src/images/icon-todo.svg" alt="" />
+                  <img src={list} alt="list_icon" />
                   Todo List
                 </li>
                 <li>
-                  <img src="/src/images/icon-calendar.svg" alt="" />
+                  <img src={calendar} alt="calendar_icon" />
                   Calendar
                 </li>
                 <li>
-                  <img src="/src/images/icon-reminders.svg" alt="" />
+                  <img src={reminders} alt="reminder_icon" />
                   Reminders
                 </li>
                 <li>
-                  <img src="/src/images/icon-planning.svg" alt="" />
+                  <img src={planing} alt="planing_icon" />
                   Planing
                 </li>
               </ul>
